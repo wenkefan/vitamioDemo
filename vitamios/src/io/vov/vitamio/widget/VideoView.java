@@ -86,11 +86,12 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
 	OnVideoSizeChangedListener mSizeChangedListener = new OnVideoSizeChangedListener() {
 		public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
       Log.d("onVideoSizeChanged: (%dx%d)", width, height);
-      mVideoWidth = mp.getVideoWidth();
-      mVideoHeight = mp.getVideoHeight();
-      mVideoAspectRatio = mp.getVideoAspectRatio();
-      if (mVideoWidth != 0 && mVideoHeight != 0)
-        setVideoLayout(mVideoLayout, mAspectRatio);
+            /** 下面注释掉的语句用于使视屏占满控件大小 **/
+//      mVideoWidth = mp.getVideoWidth();
+//      mVideoHeight = mp.getVideoHeight();
+//      mVideoAspectRatio = mp.getVideoAspectRatio();
+//      if (mVideoWidth != 0 && mVideoHeight != 0)
+//        setVideoLayout(mVideoLayout, mAspectRatio);
     }
   };
   OnPreparedListener mPreparedListener = new OnPreparedListener() {
@@ -115,7 +116,8 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
         seekTo(seekToPosition);
       
       if (mVideoWidth != 0 && mVideoHeight != 0) {
-        setVideoLayout(mVideoLayout, mAspectRatio);
+          /** 2.下面注释掉的语句用于使视屏占满控件大小 **/
+//        setVideoLayout(mVideoLayout, mAspectRatio);
         if (mSurfaceWidth == mVideoWidth && mSurfaceHeight == mVideoHeight) {
           if (mTargetState == STATE_PLAYING) {
             start();

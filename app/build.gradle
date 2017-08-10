@@ -48,4 +48,11 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     testCompile 'junit:junit:4.12'
     compile project(':vitamios')
+
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+
+    compile(name:'hylk_lib_2016.1', ext:'aar')
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+//    //图片加载库
+//    compile 'com.github.bumptech.glide:glide:3.7.0'
 }
